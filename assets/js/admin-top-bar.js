@@ -1,4 +1,4 @@
-/*! elementor - v3.19.0 - 28-02-2024 */
+/*! elementor - v3.20.0 - 20-03-2024 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -129,7 +129,7 @@ function AdminTopBar() {
   }, promotion.text), /*#__PURE__*/_react.default.createElement(_barButton.default, {
     href: window.elementorAdminTopBarConfig.apps_url,
     icon: "eicon-integration"
-  }, __('Apps', 'elementor')), window.elementorAdminTopBarConfig.is_administrator ? /*#__PURE__*/_react.default.createElement(_barButton.default, {
+  }, __('Add-ons', 'elementor')), window.elementorAdminTopBarConfig.is_administrator ? /*#__PURE__*/_react.default.createElement(_barButton.default, {
     onClick: finderAction,
     dataInfo: finderTooltipText,
     icon: "eicon-search-bold"

@@ -68,7 +68,9 @@ abstract class Document extends Controls_Stack {
 	 */
 	const STATUS_PENDING = 'pending';
 
-
+	/**
+	 * @var int
+	 */
 	private $main_id;
 
 	/**
@@ -182,8 +184,11 @@ abstract class Document extends Controls_Stack {
 			'has_elements' => static::get_property( 'has_elements' ),
 			'support_kit' => static::get_property( 'support_kit' ),
 			'messages' => [
-				/* translators: %s: Document title. */
-				'publish_notification' => sprintf( esc_html__( 'Hurray! Your %s is live.', 'elementor' ), static::get_title() ),
+				'publish_notification' => sprintf(
+					/* translators: %s: Document title. */
+					esc_html__( 'Hurray! Your %s is live.', 'elementor' ),
+					static::get_title()
+				),
 			],
 		];
 	}
@@ -242,7 +247,11 @@ abstract class Document extends Controls_Stack {
 	}
 
 	public static function get_add_new_title() {
-		return sprintf( esc_html__( 'Add New %s', 'elementor' ), static::get_title() );
+		return sprintf(
+			/* translators: %s: Document title. */
+			esc_html__( 'Add New %s', 'elementor' ),
+			static::get_title()
+		);
 	}
 
 	/**
@@ -1190,8 +1199,11 @@ abstract class Document extends Controls_Stack {
 	 */
 	public function get_panel_page_settings() {
 		return [
-			/* translators: %s: Document title. */
-			'title' => sprintf( esc_html__( '%s Settings', 'elementor' ), static::get_title() ),
+			'title' => sprintf(
+				/* translators: %s: Document title. */
+				esc_html__( '%s Settings', 'elementor' ),
+				static::get_title()
+			),
 		];
 	}
 
@@ -1505,11 +1517,19 @@ abstract class Document extends Controls_Stack {
 		$display_name = get_the_author_meta( 'display_name', $post->post_author );
 
 		if ( $autosave_post || 'revision' === $post->post_type ) {
-			/* translators: 1: Saving date, 2: Author display name. */
-			$last_edited = sprintf( esc_html__( 'Draft saved on %1$s by %2$s', 'elementor' ), '<time>' . $date . '</time>', $display_name );
+			$last_edited = sprintf(
+				/* translators: 1: Saving date, 2: Author display name. */
+				esc_html__( 'Draft saved on %1$s by %2$s', 'elementor' ),
+				'<time>' . $date . '</time>',
+				$display_name
+			);
 		} else {
-			/* translators: 1: Editing date, 2: Author display name. */
-			$last_edited = sprintf( esc_html__( 'Last edited on %1$s by %2$s', 'elementor' ), '<time>' . $date . '</time>', $display_name );
+			$last_edited = sprintf(
+				/* translators: 1: Editing date, 2: Author display name. */
+				esc_html__( 'Last edited on %1$s by %2$s', 'elementor' ),
+				'<time>' . $date . '</time>',
+				$display_name
+			);
 		}
 
 		return $last_edited;
